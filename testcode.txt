@@ -1,0 +1,52 @@
+================Okay Code=============
+#############Choose the specific lines from file######
+##it combine chosen lines and return return for command to use for cburn
+import linecache
+
+def Cburn_Run():
+    f = "Config.txt"
+    DCVar0 = linecache.getline(f, 1).strip()
+    DCVar1 = linecache.getline(f, 2).strip()
+    DCVar2 = linecache.getline(f, 4).strip()
+    DCVar3 = linecache.getline(f, 5).strip()
+    t = DCVar0 + ' ' + DCVar1 + ' ' + DCVar2 + ' '+ DCVar3
+    return t
+
+##test code
+#f = Cburn_Run()
+#print(f)
+
+#
+#import func
+#f = func.Cburn_Run()
+#print(f)
+
+###############divid line in array elements#############
+##It open multi-lines file and break each line in to array and store them as [[]]
+def DC_para():
+    DCVar = []
+    with open("DConoff.txt", "r") as my_file:
+      for line in my_file:
+          str = line.split()
+          DCVar.append(str)
+    return DCVar
+
+##test code
+#import func
+#f = func.DC_para()
+# print(f)
+
+==============Not Okay Code=======================
+import func
+time =func.CurrentWeekYear()
+#print(time)
+#
+cburn = func.Cburn_Run()
+para = func.DC_para()
+#print(para)
+# while
+
+for i,x in enumerate(para):
+     with open("CommandLines.txt", "r") as f:
+         res = cburn.replace("DIR=", "DIR="+ time)
+         print(res)

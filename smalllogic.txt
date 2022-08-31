@@ -1,0 +1,34 @@
+import func
+
+Week_Num =func.CurrentWeekYear()
+#print(time)
+#
+cburn = func.Cburn_Run()
+para = func.DC_para()
+print(para)
+name = func.getUserName()
+# MB_name = func.DC_MB_Name()
+# print(MB_name)
+
+mbname = func.DC_para()
+print(mbname[0][0])
+# while
+
+for i,x in enumerate(para):
+
+     with open("CommandLines.txt", "r") as f:
+         res = cburn.replace("DIR=", "DIR="+ name +'\\'+ Week_Num +'\\'+"cburn"+'\\'+ mbname[i][0])
+         print(res)
+
+===========
+import func
+
+Week_Num =func.CurrentWeekYear()
+cburn = func.Cburn_Run()
+para = func.DC_para()
+name = func.getUserName()
+mbname = func.DC_para()
+for i,x in enumerate(para):
+     with open("CommandLines.txt", "r") as f:
+         res = cburn.replace("DIR=", "DIR="+ name +'\\'+ Week_Num +'\\'+"cburn"+'\\'+ mbname[i][0])
+         print(res)

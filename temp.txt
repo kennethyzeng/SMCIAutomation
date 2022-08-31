@@ -1,0 +1,22 @@
+ipython                            7.29.0
+ipython-genutils                   0.2.0
+python-dateutil                    2.8.2
+python-lsp-black                   1.0.0
+python-lsp-jsonrpc                 1.0.0
+python-lsp-server                  1.2.4
+python-slugify                     5.0.2
+
+
+
+########
+<input id="p2" type="radio" name="powerList" value="ForceOff">
+<label for="p2" class="trn panel-preText-left" data-trn-key="LANG_CHASSIS_IMMOFF" validationmessage="Power Down - Immediate">Power Down - Immediate</label>
+
+<input id="p3" type="radio" name="powerList" value="GracefulShutdown">
+<label for="p3" class="trn panel-preText-left" data-trn-key="LANG_CHASSIS_ORDOFF" validationmessage="Graceful Shutdown">Graceful Shutdown</label>
+
+
+<input id="p4" type="radio" name="powerList" value="GracefulRestart">
+
+
+<input id="p3" type="radio" name="powerList" value="GracefulShutdown">

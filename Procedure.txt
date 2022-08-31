@@ -1,0 +1,31 @@
+####################Procedure for AutoRun in 172.30.0.1############
+
+Example1 for DC ON/OFF test: 
+Step 1: Store all parameterin Config.txt
+Step 2: Store system information on DCON/OFF.txt
+**Step 3: def DC_para() @ func.py => it open multi-line file; It split by space and 
+store each elements in Arrays for each line.  [[]] 
+####Output for Cburn_Run :cburn-r83 I_WILL_DEBUG SAT=8 LIN=8 MPM=8 MDELT=10256 DIR= NBMCK
+
+**Step 4: def Cburn_Run() @ func.py => generate a roughly commandline(Didn't assign DIR= yet)
+####Output of DC_Run: cburn-r83 I_WILL_DEBUG ONOFF=500 MDELT=10256 DIR= NBMCK
+
+Step5: def CurrentWeekYear() @ func.py => generte current week and year 
+###Output like this : 102022
+
+Step6: def getUserName(): @ func.py => grap the username from config.txt
+####Otput like this : Kennethz
+
+Step 7:  def DCONOFFCompleteCommand() @ GenCommandLines.py
+It called the function func.DC_Run() and use replace method to fullfill the Direotory
+and make new commandline 
+Also, it add mac_address + >=  before each command line and stroe them into exeLines.txt
+EX: 
+DC_X13_Mac>=cburn-r83 I_WILL_DEBUG ONOFF=500 MDELT=10256 DIR=KENNETHZ\102022\DCONOFF\X13DDW NBMCK
+
+Step 8: Cburn_DC_AC_AutoRun.py 
+It use Selenium and ChromeDriver to open the website 172.30.0.1
+and fill PXE_Command and mac_adress, then click "update" button for each
+line from exeLines.txt 
+
+##############################

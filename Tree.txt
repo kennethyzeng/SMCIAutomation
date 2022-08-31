@@ -1,0 +1,23 @@
+ ---pyrun.py
+|
+|
+ ---DConoff.txt
+|
+|
+ ---AConoff.txt
+|
+|
+ ---config.py
+ |
+ |
+  ---installationCheck.sh
+
+
+####################
+Conf.txt     ==> stored elements for running autotest
+DCONOFF.txt  ==> store system information for DC on/off test
+ACONOFF.txt  ==> store system information for AC on/off test
+CburnStress.txt ==> store system information for Cburn stress test 
+
+GenCommandLines.py   ==> Generate complete command lines for AC, DC, Cburn stress and store it at exeLines.txt
+
